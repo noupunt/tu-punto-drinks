@@ -1,26 +1,44 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import { useLocation } from 'react-router-dom';
+import { useFetchJSON } from './hooks/useFetchJSON';
+
+export interface Props {
+    url: string;
 }
 
-export default App;
+// App.js
+export const App: React.FC<Props> = ({ url }) => {
+
+
+    let location = useLocation();
+    const data = useFetchJSON(url);
+
+
+    return (
+        <>
+            {data.status === 'loading' && <div>Loading...</div>}
+
+            {data.status === 'loaded' && (
+
+                <>
+                    <div>
+                        < img src={
+                            data.payload.find(x => x.id === location.pathname.substring(1))?.img
+                        }>
+                        </img>
+
+                        {/* <div>{
+                            data.payload.find(x => x.id === location.pathname.substring(1))?.title
+                        }
+                        </div> */}
+                    </div>
+                </>
+
+
+            )
+
+            }
+
+        </>
+    )
+}
