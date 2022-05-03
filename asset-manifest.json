@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/noupunt/tu-punto-drinks.git/static/css/main.e6c13ad2.css",
+    "main.js": "/noupunt/tu-punto-drinks.git/static/js/main.3c48ed3c.js",
+    "index.html": "/noupunt/tu-punto-drinks.git/index.html",
+    "main.e6c13ad2.css.map": "/noupunt/tu-punto-drinks.git/static/css/main.e6c13ad2.css.map",
+    "main.3c48ed3c.js.map": "/noupunt/tu-punto-drinks.git/static/js/main.3c48ed3c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.3c48ed3c.js"
+  ]
+}
